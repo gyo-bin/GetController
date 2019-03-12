@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <form method="get" action="/greeting">
+            <input name="say">
+            <input name="to">
+            <button>SUBMIT</button>
+        </form>
+    </div>
+    <div>
+        <form>
+            <input id="say" placeholder="인사말">
+            <input id="to" placeholder="대상자">
+            <button onclick="send()">SUBMIT</button>
+            <script>
+                function send() {
+                    let say = $("#say").val();
+                    let to = $("#to").val();
+                    if(say.length<1){
+                        document.write("Hello"+to);
+                    }else if(to.length<1){
+                        document.write(say+" NONNAME");
+                    }else{
+                        document.write(say +" "+to);
+                    }
+                }
+            </script>
+        </form>
+    </div>
+</body>
+</html>
